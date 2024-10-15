@@ -1,0 +1,8 @@
+# python virtual environment
+env/
+
+# dataset
+data/images/
+
+# misc
+*/.DS_Store
