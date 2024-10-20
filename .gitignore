@@ -6,6 +6,6 @@ env_dev/
 data/images/
 
 # misc
-*/.DS_Store
+*.DS_Store
 *__pycache__
 .mypy_cache
