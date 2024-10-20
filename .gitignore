@@ -5,6 +5,9 @@ env_dev/
 # dataset
 data/images/
 
+# models
+*.pt
+
 # misc
 *.DS_Store
 *__pycache__
