@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watermark-detection-in-images-deployment
+  labels:
+    app: watermark-detection-in-images-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: watermark-detection-in-images-app
+  template:
+    metadata:
+      labels:
+        app: watermark-detection-in-images-app
+    spec:
+      containers:
+        - name: watermark-detection-in-images-container
+          image: watermark-detection-in-images-api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MODEL_DIR
+              value: "/app/models"
