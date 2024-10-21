@@ -8,7 +8,6 @@ This repository contains a FastAPI-based service that detects watermarks in imag
 
 **Note:** This is only for a take-home test for the Senior Machine Learning Engineer position at 99 Group.
 
-
 ---
 
 ## Table of Contents
@@ -42,10 +41,12 @@ pip install -r requirements.txt
 ## Running Locally
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd <repository-directory>
 ```
+
 2. Set environment variables
 Create a .env file in the project root and define the model directory:
 
@@ -54,9 +55,11 @@ MODEL_DIR=/path/to/your/model/directory
 ```
 
 3. Start the FastAPI app
+
 ```bash
 fastapi dev main.py
 ```
+
 FastAPI will start on <http://127.0.0.1:8000>. You can test the API as described in Using the API.
 
 ## Deploying with Docker
@@ -74,12 +77,15 @@ Run the container with the following command:
 ```bash
 docker run -d --name watermark-api-container -p 8000:8000 --env MODEL_DIR=/app/models watermark-detection-in-images-api
 ```
+
 This will start the container, exposing the API at <http://127.0.0.1:8000>.
 
 3. Verify the container is running
+
 ```bash
 docker ps
 ```
+
 This command lists all running containers and their status.
 
 ## Deploying with Kubernetes
@@ -112,6 +118,7 @@ Forward the Kubernetes service to your local machine:
 ```bash
 kubectl port-forward service/watermark-detection-in-images-service 8000:8000
 ```
+
 The API is now accessible via <http://127.0.0.1:8000>.
 
 ## Using the API
@@ -128,7 +135,9 @@ Example using `curl`
 ```bash
 curl -X POST "<http://127.0.0.1:8000/v1/predict/>" -F "file=@/path/to/image.jpg"
 ```
+
 Example response
+
 ```json
 {
   "boxes": [
@@ -150,6 +159,7 @@ Example
 ```bash
 curl <http://127.0.0.1:8000/v1/>
 ```
+
 This should return: "Watermark Detection API is running".
 
 ## Environment Variables
