@@ -55,7 +55,7 @@ MODEL_DIR=/path/to/your/model/directory
 
 3. Start the FastAPI app
 ```bash
-uvicorn src.main:app --reload
+fastapi dev main.py
 ```
 FastAPI will start on <http://127.0.0.1:8000>. You can test the API as described in Using the API.
 
@@ -118,7 +118,7 @@ The API is now accessible via <http://127.0.0.1:8000>.
 
 1. Upload an image for prediction
 
-- Endpoint: `/predict/`
+- Endpoint: `/v1/predict/`
 - Method: `POST`
 - Content Type: `multipart/form-data`
 - Input: Upload an image file in the form-data.
@@ -126,7 +126,7 @@ The API is now accessible via <http://127.0.0.1:8000>.
 Example using `curl`
 
 ```bash
-curl -X POST "<http://127.0.0.1:8000/predict/>" -F "file=@/path/to/image.jpg"
+curl -X POST "<http://127.0.0.1:8000/v1/predict/>" -F "file=@/path/to/image.jpg"
 ```
 Example response
 ```json
@@ -143,12 +143,12 @@ Example response
 2. Root endpoint
 Check if the API is running by hitting the root endpoint:
 
-- Endpoint: `/`
+- Endpoint: `/v1/`
 - Method: `GET`
 Example
 
 ```bash
-curl <http://127.0.0.1:8000/>
+curl <http://127.0.0.1:8000/v1/>
 ```
 This should return: "Watermark Detection API is running".
 
