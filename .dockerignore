@@ -1,0 +1,11 @@
+# python virtual environment
+env/
+env_dev/
+
+# dataset
+data/images/
+
+# misc
+*.DS_Store
+*__pycache__
+.mypy_cache
